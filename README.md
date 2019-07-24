@@ -14,6 +14,9 @@ Software engineering project
 - Add sofware folder to the IDE.
 - Add pom.xml so te IDE recognizes it as a maven project.
 - Let the IDE download the dependencies.
+- Execute mvn compile
+- Execute mvn clean install
+- Execute java -jar target/teachme-0.0.1-SNAPSHOT.jar
 - Execute in cmd cd teach-me
 - Execute npm install
 - Execute in cmd
