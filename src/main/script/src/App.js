@@ -24,6 +24,8 @@ class App extends Component {
   render = () => {
     return (
       <div className="App">
+        <div className="App-header">
+          <h2>hola</h2>
         </div>
         <div>
           <form className="App-intro" onSubmit={this.handleSubmit}>
