@@ -8,7 +8,7 @@ class MainContent extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:8090/estudiantes")
+    fetch("http://localhost:8090/usuarios")
     .then(res => res.json())
     .then(json => {
         this.setState({users: json})
