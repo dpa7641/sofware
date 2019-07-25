@@ -1,22 +1,25 @@
 import React from "react";
-
-const users = [
-  'jorge',
-  'daniel',
-  'rodrigo',
-  'german'
-];
+import './Sidebar.css';
 
 class MainContent extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {users: users};
+    this.state = { users: [] };
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:8090/estudiantes")
+    .then(res => res.json())
+    .then(json => {
+        this.setState({users: json})
+    });
   }
 
   render() {
+    const usersList = this.state.users.map((user, index) => <li key={index}>{user.nombre}</li>);
     return (
-      <ul>
-          {users.map(user => <li>{user}</li>)}
+      <ul className="user-list">
+          {usersList}
       </ul>
     );
   }
