@@ -30,7 +30,7 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("Users Service API TIS")
+                .title("Teachme Service API")
                 .description("Users management de miguel")
                 .contact(new Contact("miguel", "", "miguel68933886@gmail.com"))
                 .version("0.0.1")
