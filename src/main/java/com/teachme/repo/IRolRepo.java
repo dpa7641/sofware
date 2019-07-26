@@ -1,6 +1,6 @@
-package com.teachme.teachme.repo;
+package com.teachme.repo;
 
-import com.teachme.teachme.model.Rol;
+import com.teachme.model.Rol;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

@@ -1,7 +1,7 @@
-package com.teachme.teachme.controller;
+package com.teachme.controller;
 
-import com.teachme.teachme.model.Estudiante;
-import com.teachme.teachme.service.imple.EstudianteServiceImpl;
+import com.teachme.model.Usuario;
+import com.teachme.service.imple.UsuarioServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,40 +12,39 @@ import java.util.List;
 /**
  * @autor miguel Corma
  */
-@RequestMapping(value = "/estudiantes")
+@RequestMapping(value = "/usuarios")
 @RestController
 
-
-
-public class EstudianteController {
+@CrossOrigin(origins = "http://localhost:3000")
+public class UsuarioController {
 
     @Autowired
-    private EstudianteServiceImpl service;
+    private UsuarioServiceImpl service;
 
     @PostMapping
-    public ResponseEntity registrar(@RequestBody Estudiante estudiante){
-        Estudiante e= service.registrar(estudiante);
+    public ResponseEntity registrar(@RequestBody Usuario usuario){
+        Usuario e= service.registrar(usuario);
 
         if(e != null){
             return new ResponseEntity(e, HttpStatus.CREATED);
         }
         else{
-            return new ResponseEntity("Estudiante ya Existe", HttpStatus.NO_CONTENT);
+            return new ResponseEntity("Usuario ya Existe", HttpStatus.OK);
         }
     }
 
     @PutMapping
-    public Estudiante modificar(@RequestBody Estudiante estudiante){
-        return service.modificar(estudiante);
+    public Usuario modificar(@RequestBody Usuario usuario){
+        return service.modificar(usuario);
     }
 
     @GetMapping
-    public List<Estudiante> listar(){
+    public List<Usuario> listar(){
         return service.listar();
     }
 
     @GetMapping("/{id}")
-    public Estudiante leer(@PathVariable("id") Long id){
+    public Usuario leer(@PathVariable("id") Long id){
         return service.leer(id);
     }
 
@@ -55,3 +54,4 @@ public class EstudianteController {
     }
 
 }
+

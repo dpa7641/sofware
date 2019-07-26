@@ -1,8 +1,8 @@
-package com.teachme.teachme.service.imple;
+package com.teachme.service.imple;
 
-import com.teachme.teachme.model.Rol;
-import com.teachme.teachme.repo.IRolRepo;
-import com.teachme.teachme.service.IRolService;
+import com.teachme.model.Rol;
+import com.teachme.repo.IRolRepo;
+import com.teachme.service.IRolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +19,6 @@ public class RolServiceImpl implements IRolService {
 
     @Override
     public Rol registrar(Rol rol) {
-
         return repo.save(rol);
     }
 
@@ -45,4 +44,11 @@ public class RolServiceImpl implements IRolService {
         repo.deleteById(id);
 
     }
+    public List<Rol> listarRoles()
+    {
+        List<Rol> lista=repo.findAll();
+        lista.remove(0);
+        return lista;
+    }
 }
+

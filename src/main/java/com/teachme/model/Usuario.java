@@ -1,16 +1,16 @@
-package com.teachme.teachme.model;
+package com.teachme.model;
 
 import javax.persistence.*;
-
 /**
  * @autor miguel Corma
  */
 @Entity
-@Table(name = "administradores")
-public class Administrador {
+@Table(name = "usuario")
+public class Usuario {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idAdministrador;
+    private Long id;
 
     @Column(name = "nombre", nullable = false, length = 30)
     private String nombre;
@@ -36,13 +36,10 @@ public class Administrador {
     @Column(name = "vcontrasenia", nullable = false, length = 30)
     private String vcontrasenia;
 
-    public Long getIdAdministrador() {
-        return idAdministrador;
-    }
+    @OneToOne
+    @JoinColumn(name="rol_ID")
+    private Rol rol;
 
-    public void setIdAdministrador(Long idAdministrador) {
-        this.idAdministrador = idAdministrador;
-    }
 
     public String getNombre() {
         return nombre;
@@ -106,5 +103,13 @@ public class Administrador {
 
     public void setVcontrasenia(String vcontrasenia) {
         this.vcontrasenia = vcontrasenia;
+    }
+
+    public Rol getRol() {
+        return rol;
+    }
+
+    public void setRol(Rol rol) {
+        this.rol = rol;
     }
 }

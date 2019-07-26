@@ -1,8 +1,8 @@
-package com.teachme.teachme.service.imple;
+package com.teachme.service.imple;
 
-import com.teachme.teachme.model.Usuario;
-import com.teachme.teachme.repo.IUsuarioRepo;
-import com.teachme.teachme.service.IUsuarioService;
+import com.teachme.model.Usuario;
+import com.teachme.repo.IUsuarioRepo;
+import com.teachme.service.IUsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,8 +20,16 @@ public class UsuarioServiceImpl implements IUsuarioService {
     @Override
     public Usuario registrar(Usuario u) {
         Usuario usu=null;
-        //if(buscarCi(u.getCi()))
-        return repo.save(u);
+        if(buscarCi(u.getCi())==null)
+        {
+            return  usu=repo.save(u);
+        }
+        return  usu;
+    }
+
+    private Usuario buscarCi(String ci) {
+        Usuario u=repo.findByCi(ci);
+        return u;
     }
 
     @Override

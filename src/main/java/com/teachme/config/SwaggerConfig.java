@@ -1,4 +1,4 @@
-package com.teachme.teachme.config;
+package com.teachme.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,27 +11,23 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-/**
- * @autor miguel Corma
- */
 @Configuration
 @EnableSwagger2
-public class SwaggerConfig {
+class SwaggerConfig {
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .groupName("users-api")
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.teachme.teachme.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.teachme.controller"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(apiInfo());
     }
-
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("Teachme Service API")
-                .description("Users management de miguel")
+                .title("Users Service API SOFTWARE")
+                .description("Users management de alvaro")
                 .contact(new Contact("miguel", "", "miguel68933886@gmail.com"))
                 .version("0.0.1")
                 .license("Apache 1.0")

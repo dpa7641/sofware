@@ -1,10 +1,12 @@
-package com.teachme.teachme.repo;
+package com.teachme.repo;
 
-import com.teachme.teachme.model.Usuario;
+import com.teachme.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
+
 /**
  * @autor miguel Corma
  */
 public interface IUsuarioRepo extends JpaRepository<Usuario,Long> {
 
+    Usuario findByCi(String ci);
 }
