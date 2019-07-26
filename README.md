@@ -8,12 +8,15 @@ Software engineering project
 - java
 - Node js
 - Intellij Idea (IDE)
+- Xamp(base de datos)
 
 ### Installing
 
 - Add sofware folder to the IDE.
 - Add pom.xml so te IDE recognizes it as a maven project.
 - Let the IDE download the dependencies.
+- Execute xamp amp activate Apache,MySQL(port:3306)
+- Import sql 
 - Execute mvn compile
 - Execute mvn clean install
 - Execute java -jar target/teachme-0.0.1-SNAPSHOT.jar
