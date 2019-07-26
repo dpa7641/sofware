@@ -4,11 +4,11 @@
   border-right: 2px solid #e1e4e8;
 }
 
-button {
+.sidebar button {
   margin: 6px 6px 6px 0px;
 }
 
-button:hover {
+.sidebar button:hover {
   font-size: 18px;
   -moz-transition-duration:0.5s;
   -webkit-transition-duration: 0.5s;
