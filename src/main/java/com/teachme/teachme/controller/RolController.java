@@ -1,30 +1,32 @@
 package com.teachme.teachme.controller;
 
+import com.teachme.teachme.model.Rol;
 import com.teachme.teachme.model.Usuario;
+import com.teachme.teachme.service.imple.RolServiceImpl;
 import com.teachme.teachme.service.imple.UsuarioServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.stereotype.Controller;
+
 import java.util.List;
 
 /**
  * @autor miguel Corma
  */
-@Controller
-@RequestMapping(value = "/usuarios")
+
+@RequestMapping(value = "/roles")
 @RestController
 
-@CrossOrigin(origins = {"http://localhost:3000"})
-public class UsuarioController {
+@CrossOrigin(origins = "http://localhost:3000")
+public class RolController {
 
     @Autowired
-    private UsuarioServiceImpl service;
+    private RolServiceImpl service;
 
     @PostMapping
-    public ResponseEntity registrar(@RequestBody Usuario usuario){
-        Usuario e= service.registrar(usuario);
+    public ResponseEntity registrar(@RequestBody Rol rol){
+        Rol e= service.registrar(rol);
 
         if(e != null){
             return new ResponseEntity(e, HttpStatus.CREATED);
@@ -35,17 +37,17 @@ public class UsuarioController {
     }
 
     @PutMapping
-    public Usuario modificar(@RequestBody Usuario usuario){
-        return service.modificar(usuario);
+    public Rol modificar(@RequestBody Rol rol){
+        return service.modificar(rol);
     }
 
     @GetMapping
-    public List<Usuario> listar(){
+    public List<Rol> listar(){
         return service.listar();
     }
 
     @GetMapping("/{id}")
-    public Usuario leer(@PathVariable("id") Long id){
+    public Rol leer(@PathVariable("id") Long id){
         return service.leer(id);
     }
 

@@ -1,39 +1,29 @@
-import React, { Component } from 'react';
-import 'whatwg-fetch';
-import logo from './logo.svg';
+import React from 'react';
+import PropTypes from "prop-types";
 import './App.css';
+import Sidebar from './components/Sidebar';
+import MainContent from './components/MainContent';
 
-class App extends Component {
-  handleChange = (event) => {
-    this.setState( {request: event.target.value} )
-  }
-  handleSubmit = (event) => {
-    event.preventDefault();
-    var request = this.state.request.trim();
-    if (!request) {
-      return;
-    }
-    fetch(`/echo?request=${request}`)
-        .then(response => {
-          return response.text();
-        })
-        .then(body => {
-          alert(body);
-        });
-  }
-  render = () => {
+class App extends React.Component {
+  static propTypes = {
+    children: PropTypes.object.isRequired
+  };
+
+  render() {
+    const { children } = this.props;
     return (
-      <div className="App">
-
+    <div className="App">
+        <header className="App-header">
+          <p className="header-logo">Teach.me</p>
+        </header>
         <div>
-          <form className="App-intro" onSubmit={this.handleSubmit}>
-            <input type="text" onChange={this.handleChange} />
-            <input type="submit" value="Echo" />
-          </form>
+          <Sidebar />
+          <MainContent body={children}/>
         </div>
       </div>
-    )
+    );
   }
+
 }
 
 export default App;

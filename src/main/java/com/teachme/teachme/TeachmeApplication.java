@@ -1,14 +1,13 @@
-package com.example;
+package com.teachme.teachme;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@RestController
-public class DemoController {
-    
-    @RequestMapping(value="/echo")
-    public String echo(@RequestParam(value="request", defaultValue="Hello!") String request) {
-        return request;
+@SpringBootApplication
+public class TeachmeApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(TeachmeApplication.class, args);
     }
+
 }
