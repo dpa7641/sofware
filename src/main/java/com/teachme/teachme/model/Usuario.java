@@ -30,6 +30,30 @@ public class Usuario {
         this.id = id;
     }
 
+    public String getCi() {
+        return ci;
+    }
+
+    public void setCi(String ci) {
+        this.ci = ci;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getVcontrasenia() {
+        return vcontrasenia;
+    }
+
+    public void setVcontrasenia(String vcontrasenia) {
+        this.vcontrasenia = vcontrasenia;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -54,13 +78,6 @@ public class Usuario {
         this.apMaterno = apMaterno;
     }
 
-    public String getCi() {
-        return ci;
-    }
-
-    public void setCi(String ci) {
-        this.ci = ci;
-    }
 
     public String getEmail() {
         return email;
@@ -70,27 +87,11 @@ public class Usuario {
         this.email = email;
     }
 
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
-
     public String getContrasenia() {
         return contrasenia;
     }
 
     public void setContrasenia(String contrasenia) {
         this.contrasenia = contrasenia;
-    }
-
-    public String getVcontrasenia() {
-        return vcontrasenia;
-    }
-
-    public void setVcontrasenia(String vcontrasenia) {
-        this.vcontrasenia = vcontrasenia;
     }
 }
