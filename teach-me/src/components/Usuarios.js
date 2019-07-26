@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import './Sidebar.css';
 
 class Usuarios extends React.Component {
@@ -29,7 +30,10 @@ class Usuarios extends React.Component {
     </tbody>);
     return (
     <div className="col-md-9">
-      <h2>Lista de usuarios</h2>
+      <div className="header">
+        <h2 className="col-md-6" >Lista de usuarios</h2>
+        <Link to="/agregar-usuario" className="col-md-6"><button className="btn btn-success">Agregar usuario</button></Link>
+       </div>
       <table className="table text-left">
       <thead>
         <tr>

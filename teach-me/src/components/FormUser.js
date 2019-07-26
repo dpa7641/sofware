@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 
-
 class FormUser extends Component{
     constructor(props){
         super(props);
@@ -39,7 +38,7 @@ class FormUser extends Component{
             <option value={rol.idRol} key={index}>{rol.descripcion}</option>
         );
         return(
-            <div className="col-md-5">
+            <div>
                 <h1>Registro de usuario</h1>
                 <form onSubmit={this.handleSubmit} clasName="inputForm" >
                     <div className="form-group">
