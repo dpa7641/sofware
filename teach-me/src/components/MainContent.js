@@ -29,7 +29,7 @@ class MainContent extends React.Component {
     </tbody>);
     return (
     <div className="col-md-9">
-      <h2>Lista de usuarios</h2>
+      <h3>Lista de usuarios</h3>
       <table className="table text-left">
       <thead>
         <tr>
