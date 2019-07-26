@@ -1,5 +1,7 @@
 package com.teachme.teachme.model;
 
+import org.springframework.data.annotation.Id;
+
 import javax.persistence.*;
 
 /**

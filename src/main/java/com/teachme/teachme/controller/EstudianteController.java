@@ -15,8 +15,6 @@ import java.util.List;
 @RequestMapping(value = "/estudiantes")
 @RestController
 
-
-
 public class EstudianteController {
 
     @Autowired
@@ -36,21 +34,25 @@ public class EstudianteController {
 
     @PutMapping
     public Estudiante modificar(@RequestBody Estudiante estudiante){
+
         return service.modificar(estudiante);
     }
 
     @GetMapping
     public List<Estudiante> listar(){
+
         return service.listar();
     }
 
     @GetMapping("/{id}")
     public Estudiante leer(@PathVariable("id") Long id){
+
         return service.leer(id);
     }
 
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id") Long id){
+
         service.eliminar(id);
     }
 
