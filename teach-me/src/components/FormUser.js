@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import axios from 'axios';
 
 class FormUser extends Component{
     constructor(props){
@@ -30,17 +31,30 @@ class FormUser extends Component{
     }
 
     handleSubmit = (event) => {
-        alert('you submited text data: '+this.state.textData);
+        event.preventDefault();
+
+        console.log(this.state)
+
+        axios.post('http://localhost:8090/usuarios',this.state)
+            .then(response =>{console.log(response)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+
     }
+
 
     render(){
         const rolList = this.state.roles.map((rol, index) =>
             <option value={rol.idRol} key={index}>{rol.descripcion}</option>
         );
+
         return(
-            <div>
+
+            <div className="col-md-9">
                 <h1>Registro de usuario</h1>
-                <form onSubmit={this.handleSubmit} clasName="inputForm" >
+                <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="exampleInputEmail1">Nombre</label>
                         <input name="nombre" onChange={this.handleChange} className="form-control"id="exampleInputEmail1" placeholder="Nombre..." required/>
@@ -59,7 +73,7 @@ class FormUser extends Component{
                     </div>
                     <div className="form-group">
                         <label htmlFor="exampleInputEmail1">usuario</label>
-                        <input name="usuario" onChange={this.handleChange} type="text" className="form-control" id="exampleInputEmail1" placeholder="Cedula Identidad..." required/>
+                        <input name="usuario" onChange={this.handleChange} type="text" className="form-control" id="exampleInputEmail1" placeholder="usuario..." required/>
                     </div>
                     <div className="form-group">
                         <label htmlFor="exampleInputEmail1">Email</label>
@@ -75,7 +89,7 @@ class FormUser extends Component{
                     </div>
                     <div className="form-group">
                         <label>Seleccione Rol</label>
-                        <select name="rol" onChange={this.handleChange} className="form-control">
+                        <select name="rol" onClick={this.handleChange} onChange={this.handleChange} className="form-control">
                             {rolList}
                         </select>
                     </div>
@@ -84,6 +98,7 @@ class FormUser extends Component{
             </div>
         );
     }
+
 }
 
 export default FormUser;
