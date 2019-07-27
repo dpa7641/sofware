@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 
-class Permisos extends Component {
+class AsigRol extends Component {
 	render() {
 		return(
 			<div className="col-md-12">
@@ -19,16 +19,14 @@ class Permisos extends Component {
   						<button type="button" class="btn btn-default">Leer</button>
   						<button type="button" class="btn btn-default">Escrivir</button>
   						<button type="button" class="btn btn-default">Ambos</button>
-					</div>
+					   </div>
   				</div>
 			</div>
            </div>
-        )
+        );
     }
-
 }
 
 
 
-
-export default Permisos;
+export default AsigRol;

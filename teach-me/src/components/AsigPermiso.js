@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 
-class Permisos extends Component {
+class AsigPermiso extends Component {
 	render() {
 		return(
 			<div className="col-md-12">
@@ -31,4 +31,4 @@ class Permisos extends Component {
 
 
 
-export default Permisos;
+export default AsigPermiso;

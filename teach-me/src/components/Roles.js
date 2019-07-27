@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import './Sidebar.css';
 
-const Roles = () => (<h3>Roles</h3>)
 class Roles extends React.Component {
   constructor(props) {
     super(props);

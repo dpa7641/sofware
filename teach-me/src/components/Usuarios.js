@@ -26,6 +26,12 @@ class Usuarios extends React.Component {
         <td>{user.apMaterno}</td>
         <td>{user.ci}</td>
         <td>{user.email}</td>
+        <td><button type="button" class="btn btn-default" aria-label="Left Align">
+  <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+</button></td>
+        <td><button type="button" class="btn btn-default" aria-label="Left Align">
+  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+</button></td>
       </tr>
     </tbody>);
     return (
