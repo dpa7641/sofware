@@ -2,11 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import './Sidebar.css';
 
+import axios from 'axios';
+
 class Usuarios extends React.Component {
   constructor(props) {
     super(props);
     this.state = { users: [] };
   }
+
 
   componentDidMount() {
     fetch("http://localhost:8090/usuarios")
@@ -15,9 +18,8 @@ class Usuarios extends React.Component {
         this.setState({users: json})
     });
   }
-  eliminar(){
-    DeleteDbFiles.execute(usuario, user.id, true);
-  }
+
+
 
   render() {
     const usersList = this.state.users.map((user, index) =>
@@ -32,7 +34,7 @@ class Usuarios extends React.Component {
         <td><button type="button" class="btn btn-default" aria-label="Left Align" >
   <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
 </button></td>
-        <td><button type="button" class="btn btn-default" aria-label="Left Align" onClick={eliminar()}>
+        <td><button type="button" class="btn btn-default" aria-label="Left Align" onClick={delete(user.id)}>
   <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
 </button></td>
       </tr>
