@@ -15,6 +15,9 @@ class Usuarios extends React.Component {
         this.setState({users: json})
     });
   }
+  eliminar(){
+    DeleteDbFiles.execute(usuario, user.id, true);
+  }
 
   render() {
     const usersList = this.state.users.map((user, index) =>
@@ -26,10 +29,10 @@ class Usuarios extends React.Component {
         <td>{user.apMaterno}</td>
         <td>{user.ci}</td>
         <td>{user.email}</td>
-        <td><button type="button" class="btn btn-default" aria-label="Left Align">
+        <td><button type="button" class="btn btn-default" aria-label="Left Align" >
   <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
 </button></td>
-        <td><button type="button" class="btn btn-default" aria-label="Left Align">
+        <td><button type="button" class="btn btn-default" aria-label="Left Align" onClick={eliminar()}>
   <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
 </button></td>
       </tr>
