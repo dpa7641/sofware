@@ -36,10 +36,9 @@ public class Usuario {
     @Column(name = "vcontrasenia", nullable = false, length = 30)
     private String vcontrasenia;
 
-    @OneToOne
-    @JoinColumn(name="rol_ID")
+    @ManyToOne
+    @JoinColumn(name="rol_id")
     private Rol rol;
-
 
     public String getNombre() {
         return nombre;

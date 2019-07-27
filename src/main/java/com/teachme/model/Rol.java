@@ -1,6 +1,7 @@
 package com.teachme.model;
 
 import javax.persistence.*;
+import java.awt.print.Book;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +18,9 @@ public class Rol {
 
     @Column(name = "descripcionRol", nullable = false)
     private String descripcionRol;
+
+    @OneToMany(mappedBy = "rol")
+    private List<Usuario> usuarios;
 
 
     public Long getIdRol() {
