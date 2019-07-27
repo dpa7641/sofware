@@ -1,4 +1,4 @@
-package com.teachme.teachme;
+package com.teachme;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

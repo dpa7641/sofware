@@ -1,6 +1,6 @@
-package com.teachme.teachme.service;
+package com.teachme.service;
 
-import com.teachme.teachme.model.Rol;
+import com.teachme.model.Rol;
 
 /**
  * @autor miguel Corma

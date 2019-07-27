@@ -1,6 +1,7 @@
-package com.teachme.teachme.service;
+package com.teachme.service;
 
-import com.teachme.teachme.model.Usuario;
+
+import com.teachme.model.Usuario;
 
 /**
  * @autor miguel Corma

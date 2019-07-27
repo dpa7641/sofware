@@ -1,9 +1,7 @@
-package com.teachme.teachme.controller;
+package com.teachme.controller;
 
-import com.teachme.teachme.model.Rol;
-import com.teachme.teachme.model.Usuario;
-import com.teachme.teachme.service.imple.RolServiceImpl;
-import com.teachme.teachme.service.imple.UsuarioServiceImpl;
+import com.teachme.model.Rol;
+import com.teachme.service.imple.RolServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +12,6 @@ import java.util.List;
 /**
  * @autor miguel Corma
  */
-
 @RequestMapping(value = "/roles")
 @RestController
 
@@ -45,6 +42,10 @@ public class RolController {
     public List<Rol> listar(){
         return service.listar();
     }
+    @GetMapping("/{usuario}")
+    public List<Rol> listarRolesUsuario(){
+        return service.listarRoles();
+    }
 
     @GetMapping("/{id}")
     public Rol leer(@PathVariable("id") Long id){
@@ -57,3 +58,4 @@ public class RolController {
     }
 
 }
+

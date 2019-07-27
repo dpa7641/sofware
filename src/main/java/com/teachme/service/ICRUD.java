@@ -1,4 +1,4 @@
-package com.teachme.teachme.service;
+package com.teachme.service;
 
 import java.util.List;
 
