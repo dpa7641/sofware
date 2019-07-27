@@ -14,13 +14,13 @@ class FormUser extends Component{
             usuario:'',
             contrasenia: '',
             vcontrasenia: '',
-            rol_ID: ''
+            rol: ''
         }
     }
 
     componentDidMount(){
         
-        fetch('http://localhost:8090/roles/usuario')
+        fetch('http://localhost:8090/roles')
             .then(res => res.json())
             .then(json => {
                 this.setState({roles: json})
@@ -90,7 +90,7 @@ class FormUser extends Component{
                     </div>
                     <div className="form-group">
                         <label>Seleccione Rol</label>
-                        <select name="rol_ID" onClick={this.handleChange} onChange={this.handleChange} className="form-control">
+                        <select name="rol" onClick={this.handleChange} onChange={this.handleChange} className="form-control">
                             {rolList}
                         </select>
                     </div>
