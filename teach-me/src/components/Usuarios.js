@@ -34,7 +34,7 @@ class Usuarios extends React.Component {
         <td><button type="button" class="btn btn-default" aria-label="Left Align" >
   <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
 </button></td>
-        <td><button type="button" class="btn btn-default" aria-label="Left Align" onClick={eliminar(user.id)} >
+        <td><button type="button" class="btn btn-default" aria-label="Left Align">
   <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
 </button></td>
       </tr>
