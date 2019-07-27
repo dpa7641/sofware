@@ -42,10 +42,10 @@ public class RolController {
     public List<Rol> listar(){
         return service.listar();
     }
-    @GetMapping("/{usuario}")
+    /*@GetMapping("usuario")
     public List<Rol> listarRolesUsuario(){
         return service.listarRoles();
-    }
+    }*/
 
     @GetMapping("/{id}")
     public Rol leer(@PathVariable("id") Long id){
