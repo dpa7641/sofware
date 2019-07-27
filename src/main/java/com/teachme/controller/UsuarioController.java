@@ -1,5 +1,6 @@
 package com.teachme.controller;
 
+import com.teachme.input.UsuarioInput;
 import com.teachme.model.Usuario;
 import com.teachme.service.imple.UsuarioServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +23,8 @@ public class UsuarioController {
     private UsuarioServiceImpl service;
 
     @PostMapping
-    public ResponseEntity registrar(@RequestBody Usuario usuario){
-        Usuario e= service.registrar(usuario);
+    public ResponseEntity registrar(@RequestBody UsuarioInput input){
+        Usuario e= service.registrar(input);
 
         if(e != null){
             return new ResponseEntity(e, HttpStatus.CREATED);
